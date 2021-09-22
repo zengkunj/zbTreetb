@@ -1,0 +1,119 @@
+﻿/* zbTree样式 */
+.zbTree {
+	padding:3px;
+	font-size: 14px;
+}
+.zbTree div {
+		margin: 0px;
+		padding: 0px;
+		text-align: left;
+}
+.zbTree span{
+	margin:0;
+	padding:0;
+	vertical-align:middle;
+}
+/* .zbTree div.incdiv {;
+} */
+.zbTree div.nodediv {
+	white-space: nowrap;
+	overflow:hidden;
+}
+.zbTree div.nodediv:hover { background-color:#FFF7F0; }
+.zbTree div.aimnode {
+	white-space: nowrap;
+	overflow:hidden;
+	background-color: #F7E7C7;
+}
+.zbTree div.disnode {
+	white-space: nowrap;
+	overflow: hidden;
+	/* position: relative; */
+	background-color: #DDD;
+}
+.zbTree input {
+	vertical-align:middle;
+}
+.zbTree input[type="checkbox"] { margin: 1px; width: 16px; height: 16px;}
+.zbTree span.line0 {
+	width: 16px;
+	height: 26px;
+	display: inline-block;
+}
+.zbTree span.line1 {
+	width: 16px;
+	height: 26px;
+	display: inline-block;
+	background: url(zbTree.png) no-repeat -112px 0;
+}
+.zbTree span.off0 {
+	width: 22px;
+	height: 26px;
+	display: inline-block;
+	background: url(zbTree.png) no-repeat 0 0;
+	cursor: pointer;
+}
+.zbTree span.open0 {
+	width: 22px;
+	height: 26px;
+	display: inline-block;
+	background: url(zbTree.png) no-repeat -28px 0;
+	cursor: pointer;
+}
+.zbTree span.off1 {
+	width: 22px;
+	height: 26px;
+	display: inline-block;
+	background: url(zbTree.png) no-repeat -56px 0;
+	cursor: pointer;
+}
+.zbTree span.open1 {
+	width: 22px;
+	height: 26px;
+	display: inline-block;
+	background: url(zbTree.png) no-repeat -84px 0;
+	cursor: pointer;
+}
+.zbTree span.line3 {
+	width: 22px;
+	height: 26px;
+	display: inline-block;
+	background: url(zbTree.png) no-repeat -140px 0;
+}
+.zbTree span.line4 {
+	width: 22px;
+	height: 26px;
+	display: inline-block;
+	background: url(zbTree.png) no-repeat -168px 0;
+}
+.zbTree span.icon1 {
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+	background: url(zbTree.png) no-repeat -198px 0;
+}
+.zbTree span.icon2 {
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+	background: url(zbTree.png) no-repeat -224px 0;
+}
+.zbTree span.icon3 {
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+	background: url(zbTree.png) no-repeat -250px 0;
+}
+
+.zbTree span.nodename {
+	padding: 1px;
+	cursor: pointer;
+}
+.zbTree span.addon {
+	margin-right: 5px;
+	float: right;
+	cursor: pointer;
+	/* display: inline-block; */
+}
+
+
