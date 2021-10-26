@@ -1,0 +1,279 @@
+/** zbTreetb样式 */
+.zbTreetb {
+	padding: 3px;
+	font-size: 14px;
+	line-height: 23px;
+}
+
+.zbTreetb div {
+	margin: 0px;
+	padding: 0px;
+	text-align: left;
+}
+
+.zbTreetb span {
+	margin: 0;
+	padding: 0;
+	vertical-align: middle;
+}
+
+.zbTreetb div.nodediv {
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.zbTreetb div.nodediv:hover {
+	background-color: #fff7f0;
+}
+
+.zbTreetb tr.hotrow,
+.zbTreetb div.hotrow,
+.zbTreetb tr.hotrow:hover,
+.zbTreetb div.hotrow:hover {
+	background-color: #f7e7c7;
+}
+
+.zbTreetb tr.disrow,
+.zbTreetb div.disrow,
+.zbTreetb tr.disrow:hover,
+.zbTreetb div.disrow:hover {
+	background-color: #ddd;
+}
+
+.zbTreetb input {
+	vertical-align: middle;
+}
+
+.zbTreetb input[type="checkbox"] {
+	margin: 1px;
+	width: 16px;
+	height: 16px;
+}
+
+.zbTreetb span.line0 {
+	width: 16px;
+	height: 26px;
+	display: inline-block;
+}
+
+.zbTreetb span.line1 {
+	width: 16px;
+	height: 26px;
+	display: inline-block;
+	background: url(zbTreetb.png) no-repeat -112px 0;
+}
+
+.zbTreetb span.off0 {
+	width: 22px;
+	height: 26px;
+	display: inline-block;
+	background: url(zbTreetb.png) no-repeat 0 0;
+	cursor: pointer;
+}
+
+.zbTreetb span.open0 {
+	width: 22px;
+	height: 26px;
+	display: inline-block;
+	background: url(zbTreetb.png) no-repeat -28px 0;
+	cursor: pointer;
+}
+
+.zbTreetb span.off1 {
+	width: 22px;
+	height: 26px;
+	display: inline-block;
+	background: url(zbTreetb.png) no-repeat -56px 0;
+	cursor: pointer;
+}
+
+.zbTreetb span.open1 {
+	width: 22px;
+	height: 26px;
+	display: inline-block;
+	background: url(zbTreetb.png) no-repeat -84px 0;
+	cursor: pointer;
+}
+
+.zbTreetb span.line3 {
+	width: 22px;
+	height: 26px;
+	display: inline-block;
+	background: url(zbTreetb.png) no-repeat -140px 0;
+}
+
+.zbTreetb span.line4 {
+	width: 22px;
+	height: 26px;
+	display: inline-block;
+	background: url(zbTreetb.png) no-repeat -168px 0;
+}
+
+.zbTreetb span.icon1 {
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+	background: url(zbTreetb.png) no-repeat -198px 0;
+}
+
+.zbTreetb span.icon2 {
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+	background: url(zbTreetb.png) no-repeat -224px 0;
+}
+
+.zbTreetb span.icon3 {
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+	background: url(zbTreetb.png) no-repeat -250px 0;
+}
+
+.zbTreetb span.nodename {
+	padding: 1px;
+	cursor: pointer;
+}
+
+.zbTreetb span.addon {
+	margin-right: 5px;
+	float: right;
+	cursor: pointer;
+	/* display: inline-block; */
+}
+/* zbTab 样式 */
+.zbTreetb table {
+	border-collapse: collapse;
+	border: 1px solid #bbb;
+}
+
+.zbTreetb th {
+	padding: 3px;
+	border-right: 1px solid #bba;
+	border-bottom: 1px solid #bba;
+	background-color: #dee;
+	text-align: center;
+	font-weight: normal;
+}
+
+.zbTreetb td {
+	padding: 0px 3px;
+	border-right: 1px solid #bba;
+	border-bottom: 1px solid #bba;
+}
+
+.zbTreetb td.ro {
+	color: #777;
+	text-align: center;
+}
+
+.zbTreetb td.tx-rt {
+	text-align: right;
+}
+
+.zbTreetb td.tx-ctr {
+	text-align: center;
+}
+
+.zbTreetb input, select {
+	margin: 0px;
+	border: 0px;
+	outline: none;
+	padding: 0px;
+	font-size: 14px;
+	text-align: right;
+}
+
+.zbTreetb input[type="checkbox"] {
+	margin: 1px;
+	width: 16px;
+	height: 16px;
+}
+
+.zbTreetb button {
+	margin: 0px;
+	border: 0px;
+	padding: 0px;
+	background: none;
+}
+
+.zbTreetb tr:hover {
+	background-color: #fff7f0;
+}
+
+.zbTreetb tr.edit-at {
+	background: none;
+}
+
+/* .zbTreetb tr.edit-at > td {
+	padding: 0px 2px 0px 2px;
+} */
+
+.zbTreetb td.edit-on {
+	padding: 0px 2px;
+	border: 2px solid #5a3;
+}
+
+ div.sw-chk {
+	padding: 1px;
+	text-align: center;
+	/* margin: 0px;
+	height: 23px; */
+}
+
+.sw-chk label {
+	display: inline-block;
+	border: 1px solid #DDD;
+	border-radius: 5px;
+	width: 42px;
+	height: 20px;
+	/* padding: 0px 1px; */
+	cursor: pointer;
+	position: relative;
+	white-space: nowrap;
+	overflow: hidden;
+
+}
+
+.sw-chk label > span {
+	display: inline-block;
+	font-size: 14px;
+	line-height: 14px;
+	width: 18px;
+	height: 17px;
+	padding: 2px 2px;
+	vertical-align: top;
+	overflow: hidden;
+}
+
+.sw-chk label:before {
+	content: '';
+	position: absolute;
+	width: 18px;
+	height: 18px;
+	margin: 1px 1px;
+	border: 0px;
+	border-radius: 4px;
+	box-shadow: 0 0 0 32px rgba(200,200,200,0.9);
+	transition: all 0.4s ease;
+}
+
+.sw-chk input[type=checkbox] {
+	display: none;
+}
+
+.sw-chk input[type=checkbox]:checked + label:before {
+	box-shadow: 0 0 0 30px rgba(200,230,200,0.9);
+	transform: translateX(22px);
+}
+
+.zbTreetb div.scrolltb {
+	position: absolute;
+	overflow-y: scroll;
+	border-bottom: 1px solid #BBA;
+}
+
+.zbTreetb .fix-th {
+	position: absolute;
+	z-index: 9;
+}

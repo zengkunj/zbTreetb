@@ -1,0 +1,169 @@
+﻿
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="utf-8">
+<title>树形表格控件zbTreetb</title>
+	<link href="zbTreetb.css" type="text/css" rel="stylesheet" />
+	<script src="zbTreetb.js" type="text/javascript"></script>
+</head>
+<body>
+<h4>表格控件zbTab</h4>
+<form id="frmOrt" name="frmOrt" action="" method="post">
+<div id="treetb" class="zbTreetb"> </div>
+</form>
+<br>
+选中：<input id="nodeid" type="hidden" value="" />
+<input id="nodename" type="text" value="" /><br /><br />
+<div>之后的文本。
+	<input id="btn3" type="button" value="定位到" onclick="locate();" />
+	<select id="locateid" >
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5</option>
+		<option value="6">6</option>
+		<option value="7">7</option>
+		<option value="8">8</option>
+		<option value="9">9</option>
+		<option value="10">10</option>
+		<option value="11">11</option>
+		<option value="12">12</option>
+		<option value="13">13</option>
+		<option value="14">14</option>
+		<option value="15">15</option>
+		<option value="16">16</option>
+		<option value="17">17</option>
+		<option value="18">18</option>
+		<option value="19">19</option>
+		<option value="20">20</option>
+		<option value="21">21</option>
+	</select>
+	<input id="btn4" type="button" value="禁用当前" onclick="disNode();" />
+	<input id="btn5" type="button" value="禁用分支" onclick="disSub();" />
+	<input id="btn6" type="button" value="取消禁用" onclick="enableNodes();" />
+	<input id="btn7" type="button" value="删除" onclick="delNode();" /><br />
+	<input id="btn2" type="button" value="在当前节点添加子树nodes2" onclick="add2();" />
+</div>
+
+<script type="text/javascript">
+	flds = [
+		{fld:"id", label: "id", width: "50px" },
+		{fld:"name", label: "名称", width: "50px"},	
+		{fld:"num", label: "编号", width: "50px", ro: true },
+		{fld:"indate", label: "入库时间长一点点", width: "90px"},
+		{fld:"amount", label: "数量", width: "50px"},
+		{fld:"rate", label: "等级", width: "70px", lis:[{tx:"优等", val: 1}, {tx:"良好", val: 2}, {tx:"合格", val: 3 }, {tx:"不合格", val: 3 }]},
+	  {fld:"sex", label: "性别", width: "50px", bit: true, tx0:"母",tx1:"公" },
+		{fld:"note", label: "备注", ro: true, width: "80px"}
+	];
+
+	var items1 = [
+		{id: 1, pid:0, num: "218",name: "肉类", indate:"2017-08-09", amount:"20", rate: 2, sex: false, note: "散养"},
+		{id: 2, pid:1, num: "219",name: "精禽", indate:"2017-08-09", amount:"30", rate: 2, sex: 1, note: "土家"},
+		{id: 3, pid:2, num: "405",name: "瘦肉猪", indate:"2017-08-09", amount:"8", rate: 3, sex: 0, note: "场购"},
+		{id: 4, pid:2, num: "518",name: "桃谷鸭", indate:"2017-08-09", amount:"10", rate: 1, sex: 1, note: "收购"},
+		{id: 5, pid:2, num: "656", name: "散养鹅", indate: "2017-08-09", amount:"5", rate: 1, sex: true, note:"山货"},
+		{id: 6, pid:1, num: "322",name: "土味", indate:"2017-08-09", amount:"22", rate: 2, sex: false, note: "散养"},
+		{id: 7, pid:6, num: "320",name: "乌脚鸡", indate:"2017-08-09", amount:"30", rate: 2, sex: 1, note: "场购"},
+		{id: 8, pid:6, num: "321",name: "土猪", indate:"2017-08-09", amount:"38", rate: 3, sex: 0, note: "场购"},
+		{id: 9, pid:8, num: "519",name: "香猪", indate:"2017-08-09", amount:"21", rate: 1, sex: 1, note: "收购"},
+		{id: 10, pid:6, num: "520", name: "芦花鸡", indate: "2017-08-09", amount:"6", rate: 1, sex: true, note:"收购"},
+		{id: 11, pid:1, num: "323",name: "果子狸", indate:"2017-08-09", amount:"20", rate: 2, sex: false, note: "散养"},
+		{id: 12, pid:0, num: "325",name: "山珍", indate:"2017-08-09", amount:"12", rate: 2, sex: 1, note: "山货"},
+		{id: 13, pid:12, num: "521",name: "走兽", indate:"2017-08-09", amount:"18", rate: 3, sex: 0, note: "场购"},
+		{id: 14, pid:13, num: "230",name: "野猪", indate:"2017-08-09", amount:"10", rate: 1, sex: 1, note: "收购"},
+		{id: 15, pid:13, num: "620", name: "野兔", indate: "2017-08-09", amount:"15", rate: 1, sex: true, note:"土家"},
+		{id: 16, pid:13, num: "620", name: "野鸡鸭", indate: "2017-08-09", amount:"15", rate: 1, sex: true, note:"土家"},
+		{id: 17, pid:16, num: "620", name: "花溪鸭", indate: "2017-08-09", amount:"15", rate: 1, sex: true, note:"土家"},
+		{id: 18, pid:16, num: "620", name: "林鸡", indate: "2017-08-09", amount:"15", rate: 1, sex: true, note:"土家"},
+		{id: 19, pid:18, num: "620", name: "凤鸡", indate: "2017-08-09", amount:"15", rate: 1, sex: true, note:"土家"},
+		{id: 20, pid:12, num: "620", name: "飞禽", indate: "2017-08-09", amount:"15", rate: 1, sex: true, note:"土家"},
+		{id: 21, pid:0, num: "620", name: "海味", indate: "2017-08-09", amount:"15", rate: 1, sex: true, note:"土家"}
+	];
+
+	var ttb = new zbTreetb({
+		dom: "treetb",
+		tree: true,	// 包含树形
+		idCol: "id",	// 缺省为 "id", 区分大小写
+		pidCol: "pid",	// 缺省为 "pid"
+		titleCol: "name",	// 缺省为 "title"
+		tab: true,	// 表格形式
+		flds: flds,	// 表格字段集
+		chkbox: true,
+		editable: true,
+		onTapnode: tapNode,
+		onSave: save
+	});
+	ttb.addItems(items1);
+	ttb.fixTh("300px");
+
+	function tapNode(nodeid, nodename, isFather) {
+		document.getElementById("nodeid").value = nodeid;
+		document.getElementById("nodename").value = nodename;
+		// alert(nodeid +","+ nodename);
+	}
+
+	function save(rid) {
+		var theid = rid;
+		ordata = ttb.getRowdata(rid);
+		// alert(JSON.stringify(ordata));
+		alert("数据已变化，保存并返回。");
+		data = {};
+		if (rid == "empty") data[flds[0].fld] = Math.round(Math.random()*1000); // 没有真的保存，产生一个随机整数。
+		else data[flds[0].fld] = rid;
+		var nCol = flds.length;
+		for (var i = 1; i < nCol; i++) {
+			if (flds[i].ro) data[flds[i].fld] = ordata[flds[i].fld];
+			else {
+				if (flds[i].bit) {
+					data[flds[i].fld] = document.getElementById("" + flds[i].fld).checked;
+				}
+				else {
+					data[flds[i].fld] = document.getElementById("" + flds[i].fld).value;
+				}
+			}
+		}
+
+		// 示例是直接把输入的数据合并到返回数据，实际上这里需要远程保存（只保存需要数据）并获取JSON数据
+
+		ttb.returnRow(data);
+	}
+
+	function del(rid) {
+		alert(rid);
+	}
+
+	function disNode() {
+		ttb.disOne();
+	}
+	
+	function disSub(){
+		ttb.disSub();
+	}
+
+	function enableNodes() {
+		ttb.undis();
+	}
+
+	function locate() {
+		var val = document.getElementById("locateid").value;
+		ttb.locate(val);
+	}
+
+	function delNode() {
+		var oneid = document.getElementById("nodeid").value;
+		ttb.delSub(oneid);
+		//alert(oneid);
+	}
+
+	function addon(nodeid, nodediv) {
+		alert("附加内容，节点："+nodeid+"，附加域："+nodediv);
+
+	}
+
+</script>
+
+
+</body>
+</html>
